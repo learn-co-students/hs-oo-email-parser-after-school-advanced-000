@@ -6,7 +6,7 @@ class EmailParser
       email.sub!(",","")
       email.sub!(" ","")
       email.sub!(";","")
-        if arlist.include?(email) == false
+        if arlist.include?(email) == false && email.include?('@')
           arlist.push(email)
         end
     end
