@@ -1,5 +1,15 @@
 # Create a class EmailParser with a parse method that accepts a string of unformatted email addresses as an argument. The parse method should separate the string into an array of unique email addresses (removing any duplicates). The delimiters to support are commas (','), spaces (' ') and semicolons (';'). 
-
+class EmailParser
+  
+  def parse(emails)
+    emails.gsub!(/[,;]/, '')
+    list=emails.split(' ')
+    list.map! do |email|
+      email.strip
+    end.uniq
+  end
+  
+end
 
 
 # Bonus!
